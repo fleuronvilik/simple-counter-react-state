@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import useLocalStorage from "./useLocalStorage"
 
 export default function Counter({ step }) {
-  var [count, setCount] = React.useState(0);
+  var [count, setCount] = useLocalStorage("count", 0);
   useEffect(() => {
     document.title = `Count (${count})`;
-  }, [count])
+  }, [count]);
   return (
     <div className="Counter">
       <p className="count">{count}</p>
