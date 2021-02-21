@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Counter({ step }) {
   var [count, setCount] = React.useState(0);
+  useEffect(() => {
+    document.title = `Count (${count})`;
+  }, [count])
   return (
     <div className="Counter">
       <p className="count">{count}</p>
